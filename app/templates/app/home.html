@@ -1,0 +1,103 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block banner_slider %}
+<!-- Bắt đầu phần Carousel -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <!-- Các nút điều khiển carousel -->
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <!-- Phần Slide 1 -->
+    <div class="carousel-item active" data-bs-interval="3000">
+      <img src="{% static 'app/images/banner/trang1.jpg' %}" class="d-block w-100" alt="Vàng tinh luyện" height='480'>
+      <div class="carousel-caption d-none d-md-block banner-text">
+        <h5>Trang sức tinh luyện</h5>
+        <p> Đảm bảo chất lượng và bảo hành theo thời gian</p>
+      </div>
+    </div>
+    <!-- Phần Slide 2 -->
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'app/images/banner/trang2.jpg' %}" class="d-block w-100" alt="..." height='480'>
+      <div class="carousel-caption d-none d-md-block banner-text">
+        <h5>Nhập khẩu từ các nước</h5>
+        <p>Khách hàng tin dùng trong và ngoài nước</p>
+      </div>
+    </div>
+    <!-- Phần Slide 3 -->
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'app/images/banner/trang3.jpg' %}" class="d-block w-100" alt="..." height='480'>
+      <div class="carousel-caption d-none d-md-block banner-text">
+        <h5>Trang sức các loại</h5>
+        <p>Đa dạng mẫu mã</p>
+      </div>
+    </div>
+    <!-- Phần Slide 4 -->
+    <div class="carousel-item" data-bs-interval="2000">
+        <img src="{% static 'app/images/banner/trang4.jpg' %}" class="d-block w-100" alt="..." height='480'>
+        <div class="carousel-caption d-none d-md-block banner-text">
+          <h5>Sale liên tiếp</h5>
+          <p>Nhiều mã ưu đãi</p>
+        </div>
+      </div>
+  </div>
+  <!-- Các nút điều khiển trước và sau của carousel -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev" style="width: 50px; height: 50px; top: 50%; transform: translateY(-50%);">
+    <span class="carousel-control-prev-icon" aria-hidden="true" style="transform: scale(1.5);"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next" style="width: 50px; height: 50px; top: 50%; transform: translateY(-50%);">
+    <span class="carousel-control-next-icon" aria-hidden="true" style="transform: scale(1.5);"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Kết thúc phần Carousel -->
+{% endblock banner_slider %}
+
+{% block main-content %}
+<!-- Bắt đầu phần hiển thị sản phẩm -->
+<div class="row" style='width:100%;'>
+
+  {% for product in products %}
+  <!-- Bắt đầu mỗi sản phẩm -->
+  <div class="col-lg-3 mb-4">
+    <div class="box-element product" style="height: 515px; border: 1px solid #000000; border-radius: 10px; display: flex; flex-direction: column; justify-content: space-between;">
+        <!-- Hình ảnh sản phẩm -->
+        <div class="image-container" style="height: 300px; width: 100%; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+            <img class="thumbnail" src="{{product.ImageURL}}" 
+                style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <!-- Thông tin sản phẩm -->
+        <div class="content-container" style="padding: 15px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+            <h6 style="text-align: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 5px;">
+                {{ product.name }}
+            </h6>
+            <hr>
+            <div class="button-price-container" style="display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1;">
+                <!-- Các nút "Thêm vào giỏ" và "Xem" -->
+                <div class="buttons mb-2" style="display: flex; flex-direction: column; gap: 6px;">
+                    <button data-product={{product.id}} data-action = "add" class="btn btn-outline-secondary add-btn w-100 mb-2 update-cart">Thêm vào giỏ</button>
+                    <a class="btn btn-outline-secondary add-btn w-100 mb-2" href="{%url 'detail' %}?id={{product.id}}">Xem</a>
+                </div>
+                <!--load định dạng  giá-->
+			          {% load custom_filters %}
+                <!-- Giá sản phẩm -->
+                <h3 class="text-center mb-0" style="font-size: 1.1rem;">
+                    <strong>Giá: {{product.price | format_currency }}</strong>
+                </h3>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Kết thúc mỗi sản phẩm -->
+
+  {% endfor %}
+</div>
+<!-- Kết thúc phần hiển thị sản phẩm -->
+<br /><br /><br /><br />
+{% endblock main-content %}

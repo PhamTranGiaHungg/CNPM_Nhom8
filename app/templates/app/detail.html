@@ -1,0 +1,70 @@
+{% extends 'app/base.html' %}
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="">
+        
+    </head>
+    <body>  
+
+        {% block register %}
+        
+        <div class="container mt-5 mb-5">
+            {% for product in products %}
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-6 d-flex justify-content-center align-items-center"> <!-- Thêm class d-flex justify-content-center align-items-center vào đây -->
+                                <div class="images p-3">
+                                    <div class="text-center p-4">
+                                        <img id="main-image" src="{{product.ImageURL}}" width="350" style="max-width: 100%; height: auto;" />  <!--thêm style max-width:100%, height: auto-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product p-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <!-- Mũi tên quay lại với liên kết trang chủ -->
+                                            <i class="fa fa-arrow-left"></i> 
+                                            <span class="ml-1"><a href="{% url 'home' %}">Quay lại</a></span> 
+                                        </div>
+                                        
+                                        <!-- Giỏ hàng bằng hình ảnh -->
+                                        <a href="{% url 'cart' %}" class="cart-link">
+                                            <img id="cart-icon" class="img-fluid" style="width: 30px;" src="{% static 'images/shoppingcart.png' %}" alt="Cart Icon">
+                                        </a>
+                                                                            </div>
+                                    <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">Trang sức</span>
+                                        <h5 class="text-uppercase">{{product.name}}</h5>
+                                        <!-- load filter giá -->
+                                        {% load custom_filters %}
+
+                                        <div class="price d-flex flex-row align-items-center"> <span class="act-price"> {{ product.price|format_currency }} </span>
+                                            <!-- <div class="ml-2"> <small class="dis-price">$59</small> <span>40% OFF</span> </div> -->
+                                        </div>
+                                    </div>
+                                    <p class="about">{{product.detail}}</p>
+                                    
+                                    <div class="cart mt-4 align-items-center"> 
+                                    <button data-product={{product.id}} data-action = "add" class="btn btn-danger text-uppercase mr-2 px-4 add-btn w-100 mb-2 update-cart">Thêm vào giỏ</button> 
+                                    <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endblock register %}
+
+</body>
+</html> 
+    

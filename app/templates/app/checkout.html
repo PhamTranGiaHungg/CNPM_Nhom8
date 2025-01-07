@@ -1,0 +1,98 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content_checkout %}
+<!-- Bắt đầu phần thông tin người dùng và thông tin vận chuyển -->
+<div class="row" style='width:102%;'>
+	<!-- Bắt đầu phần thông tin người dùng -->
+	<div class="col-lg-6">
+		<br><br><br>
+		<div class="box-element" id="form-wrapper">
+			<form id="form">
+                            <!-- Các trường thông tin người dùng -->
+				<div id="user-info">
+					<div class="form-field">
+						<input required class="form-control" type="text" name="name" placeholder="Tên..">
+					</div>
+					<div class="form-field">
+						<input required class="form-control" type="email" name="email" placeholder="Email..">
+					</div>
+				</div>
+				
+				<!-- Các trường thông tin vận chuyển -->
+				<div id="shipping-info">
+					<hr>
+					<p>Thông tin vận chuyển:</p>
+					<hr>
+					<div class="form-field">
+						<input class="form-control" type="text" name="address" placeholder="Địa chỉ..">
+					</div>
+					<div class="form-field">
+						<input class="form-control" type="text" name="city" placeholder="Thành phố..">
+					</div>
+					<div class="form-field">
+						<input class="form-control" type="text" name="state" placeholder="Tỉnh/Quận huyện..">
+					</div>
+					<div class="form-field">
+						<input class="form-control" type="text" name="phone" placeholder="Số điện thoại..">
+					</div>
+					<div class="form-field">
+						<input class="form-control" type="text" name="country" placeholder="Quốc gia..">
+					</div>
+				</div>
+
+                <!-- Nút tiếp tục -->
+                <hr>
+                <div class="text-center">
+                    <input id="form-button" class="btn btn-success w-100" type="submit" value="Tiếp tục">
+                </div>
+            </form>
+        </div>
+        
+		<!-- Phần phương thức thanh toán (ẩn) -->
+		<br>
+		<div class="box-element hidden" id="payment-info">
+			<small>Phương thức thanh toán</small>
+		</div>
+		
+		</div>
+
+	<!-- Bắt đầu phần tóm tắt đơn hàng -->
+	<div class="col-lg-6">
+		<div class="box-element">
+			<a class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Quay lại giỏ hàng</a>
+			<hr>
+			<h3>Tóm tắt đơn hàng</h3>
+			<hr>
+			<div class="cart-row">
+				<div style="flex:2; display: flex; justify-content: center; align-items: center;"><strong>Hình ảnh</strong></div>				
+				<div style="flex:2"><strong>Sản phẩm</strong></div>
+				<div style="flex:1"><strong>Giá</strong></div>
+				<div style="flex:1"><strong>Số lượng</strong></div>
+			</div>
+			<!--load định dạng  giá-->
+			{% load custom_filters %}
+
+			{% for item in items %}
+    			<div class="cart-row">
+        			<div style="flex:2; display: flex; justify-content: center; align-items: center;">
+            			<div class="image-container" style="display: flex; justify-content: center; align-items: center;">
+                			<img class="row-image" src="{{item.product.ImageURL}}" style="max-width: 100%; max-height: 100%; display: block;">
+            			</div>
+        			</div>
+        			<div style="flex:2"><p>{{item.product.name}}</p></div>
+        			<div style="flex:1"><p>{{item.product.price | format_currency }}</p></div>
+        			<div style="flex:1"><p>{{item.quantity}}</p></div>
+    			</div>
+			{% endfor %}
+			<!--load định dạng  giá-->
+			{% load custom_filters %}
+			<!-- Hiển thị tổng số sản phẩm và tổng giá trị giỏ hàng -->
+			<h5>Các sản phẩm:   {{order.get_cart_items}}</h5>
+			<h5>Tổng:   {{order.get_cart_total | format_currency}} </h5>
+		</div>
+	</div>
+</div>
+<!-- Kết thúc phần thông tin người dùng và tóm tắt đơn hàng -->
+<br><br><br>
+{% endblock content_checkout %}

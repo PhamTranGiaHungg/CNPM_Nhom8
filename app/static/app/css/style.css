@@ -1,0 +1,281 @@
+/* 1. CSS cho Owl Carousel */
+.owl-carousel .item {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    transition: transform .5s ease;
+}
+
+.owl-carousel .item:hover {
+    transform: scale(1.1);
+}
+
+.owl-carousel .owl-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.owl-prev span,
+.owl-next span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 2. CSS cho Banner Text */
+.banner-text {
+    color: #ffffff; /* Màu trắng hoặc be sáng tùy chọn */
+    font-family: 'Roboto', sans-serif; /* Phông chữ hiện đại, dễ đọc */
+    font-size: 20px; /* Giữ nguyên kích thước cơ bản */
+    text-align: center; /* Căn giữa nội dung để có bố cục đẹp hơn */
+}
+
+.banner-text h5 {
+    font-weight: 700; /* Đậm hơn */
+    font-size: 32px; /* Tăng kích thước tiêu đề */
+     text-transform: uppercase; /* Chữ in hoa cho tiêu đề */
+    letter-spacing: 1px; /* Khoảng cách chữ rộng hơn, dễ đọc hơn */
+    color: #ffdd57;  /* Màu vàng sáng */
+        text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, /* Viền liền */
+                 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+
+}
+
+.banner-text p {
+    font-size: 22px; /* Tăng kích thước cho đoạn văn */
+    font-style: normal; /* Bỏ italic */
+     line-height: 1.5; /* Tăng khoảng cách dòng */
+      font-weight: 400; /* Độ đậm vừa phải */
+     color: #ffffff; /* Đặt màu chữ trắng hoặc be */
+    text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, /* Viền liền */
+            1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+
+
+}
+
+/* 3. CSS Màu Sắc */
+.text-light-blue {
+    color: #add8e6;
+}
+
+.bg-light-blue {
+    background-color: #add8e6;
+}
+
+.border-light-blue {
+    border-color: #add8e6;
+}
+
+/* 4. CSS Background Gradient */
+.buttermilk {
+    background-color: #fff;
+    background-image: linear-gradient(#fff7ef, #fff);
+    background-image: -webkit-linear-gradient(#fff7ef, #fff);
+    background-image: -moz-linear-gradient(#fff7ef, #fff);
+    background-image: -ms-linear-gradient(#fff7ef, #fff);
+    background-image: -o-linear-gradient(#fff7ef, #fff);
+    padding: 50px 40px;
+    border: 1px solid #efe8e1;
+    padding-bottom: 20px;
+}
+
+.smbg {
+    background-color: #fff;
+    background-image: linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+    background-image: -webkit-linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+    background-image: -moz-linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+    background-image: -ms-linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+    background-image: -o-linear-gradient(rgba(110, 69, 143, 0.1), #fff);
+}
+
+.curdbgpro {
+    background-color: #fff;
+    background-image: linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+    background-image: -webkit-linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+    background-image: -moz-linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+    background-image: -ms-linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+    background-image: -o-linear-gradient(rgba(10, 77, 123, 0.1), #fff);
+}
+
+/* 5. CSS Nội Dung (Content) */
+.goodnessseccont img {
+    width: 100%;
+}
+
+.mlkpro {
+    color: #636362;
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 15px;
+    width: 43%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.goodnesssec a {
+    text-decoration: none;
+}
+
+/* 6. CSS Sản Phẩm (Product) */
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.price {
+    margin: 0;
+    font-size: 16px;
+}
+
+.add-btn {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.image-container {
+    width: 100px; /* Đặt chiều rộng của khung */
+    height: 100px; /* Đặt chiều cao của khung (bằng chiều rộng) */
+    overflow: hidden; /* Ẩn phần ảnh thừa */
+  }
+  .row-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+.image-container img.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-element.product h6 {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.box-element.product h3 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* 7. CSS Logo và Cart Link */
+#logo {
+    position: relative;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+}
+
+#logo:hover {
+    transform: scale(1.5);
+}
+
+.cart-link {
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-link:hover {
+    transform: scale(1.5) !important;
+}
+
+/* 8. CSS cho Carousel Control */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    transform: scale(1.5);
+}
+.carousel-image {
+    height: 480px;
+    object-fit: cover;
+}
+.carousel-inner {
+    height: 100%;
+}
+
+.content-container {
+    background: linear-gradient(
+      135deg,
+      #fdfcfb,   /* Trắng nhạt */
+      #f7f1e3 15%, /* Vàng nhạt */
+      #fde2e4 30%, /* Hồng đào nhẹ */
+      #fce4ec 45%, /* Hồng pastel */
+      #d1f2eb 60%, /* Xanh ngọc */
+      #b8e4e3 75%, /* Xanh ngọc đậm hơn */
+      #fdfcfb 90%  /* Quay lại trắng nhạt */
+    );
+    border-radius: 15px; /* Tăng độ bo góc */
+    padding: 25px; /* Tăng khoảng cách bên trong */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Bóng mượt hơn */
+    transition: background 0.5s ease; /* Hiệu ứng chuyển đổi màu khi hover (nếu muốn) */
+  }
+  body {
+    background-image: url('/static/app/images/background.jpg');
+    background-repeat: no-repeat; /* Ngăn hình ảnh lặp lại */
+    background-size: cover; /* Đảm bảo hình ảnh bao phủ toàn bộ màn hình */
+    background-position: center center; /* Căn giữa hình ảnh */
+    background-attachment: fixed; /* Giữ hình nền cố định khi cuộn trang */
+}
+
+.navbar {
+    background-image: url('/static/app/images/navbar-bg.jpg');
+    background-repeat: no-repeat; /* Ngăn hình ảnh lặp lại */
+    background-size: cover; /* Đảm bảo hình ảnh bao phủ toàn bộ navbar */
+    background-position: center center; /* Căn giữa hình ảnh */
+    /* Các thuộc tính khác */
+      /* color:rgb(255, 251, 0);  */
+  }
+  /* .navbar a {
+      color:rgb(246, 255, 0); 
+  } */
+
+.navbar-collapse {
+    display: flex; /* Sử dụng flexbox cho navbar-collapse */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    justify-content: flex-start; /* Các phần tử dàn đều bên trái */
+
+}
+.navbar-right {
+    display: flex; /* Hiển thị các phần tử theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-left: auto; /* Đẩy nhóm phần tử về phía bên phải */
+/* Các css khác */
+}
+.navbar-right > * {
+    margin-left: 10px; /* tạo khoảng cách giữa các phần tử */
+}
+.navbar-right form {
+    margin: 0;
+}
+.form-control {
+    width: auto;
+}
+    
+.flex-center {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+.text-center{
+text-align: center;
+}
+
+.search-result-heading{
+         color: white; /* Đặt màu chữ thành trắng */
+     }

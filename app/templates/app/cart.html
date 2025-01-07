@@ -1,0 +1,93 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block cart_content %}
+<!-- Bắt đầu phần giỏ hàng -->
+<div class="container-fluid p-0"> <!-- Thêm container-fluid để loại bỏ khoảng cách bên ngoài -->
+	<div class="col-lg-12">
+		<div class="box-element">
+
+			<!-- Nút quay lại mua sắm -->
+			<a class="btn btn-outline-dark" href="{% url 'home' %}">&#x2190; Tiếp tục quay lại mua sắm</a>
+
+			<br>
+			<br>
+			<table class="table">
+				<tr>
+					<!-- Hiển thị số lượng sản phẩm trong giỏ hàng và tổng giá trị giỏ hàng -->
+					<th><h5>Các sản phẩm: <strong>{{order.get_cart_items}}</strong></h5></th>
+					<!--load định dạng  giá-->
+					{% load custom_filters %}
+					<th><h5>Tổng cộng:<strong> {{order.get_cart_total | format_currency}}</strong></h5></th>
+					<th>
+						<!-- Nút chuyển đến trang thanh toán -->
+						<a style="float:right; margin:5px;" class="btn btn-success btn-lg" href="{% url 'checkout' %}">Kiểm tra</a>
+					</th>
+				</tr>
+			</table>
+
+		</div>
+
+		<br>
+		
+		<!-- Bắt đầu phần danh sách sản phẩm trong giỏ hàng -->
+		<div class=" box-element ">
+			<div class="cart-row">
+				<div style="flex:2; text-align: center;">
+					<strong>Hình ảnh</strong>
+				</div>
+				<div style="flex:2"><strong>Sản phẩm</strong></div>
+				<div style="flex:1"><strong>Giá</strong></div>
+				<div style="flex:1"><strong>Số lượng</strong></div>
+				<div style="flex:1"><strong>Tổng</strong></div>
+			</div>
+			<!--load định dạng  giá-->
+			{% load custom_filters %}
+			<!-- Lặp qua từng sản phẩm trong giỏ hàng -->
+			{% for item in items %}
+			<div class="cart-row">
+				<div style="flex:2; text-align: center;">
+					<div class="product-image">
+						<img class="row-image" src="{{item.product.ImageURL}}" alt="{{item.product.name}}">
+					</div>
+				</div>
+				<div style="flex:2"><p>{{item.product.name}}</p></div>
+				<div style="flex:1"><p>{{item.product.price | format_currency}} </p></div>
+				<div style="flex:1">
+					<p class="quantity">{{item.quantity}}</p>
+					<div class="quantity">
+						
+						<!--load định dạng  giá-->
+						{% load custom_filters %}
+						<!-- Các nút thay đổi số lượng -->
+						<img data-product = {{item.product.id}} data-action = 'add' class="chg-quantity update-cart" src="{% static 'app/images/arrow-up.png' %}">
+						<img data-product = {{item.product.id}} data-action = 'remove' class="chg-quantity update-cart" src="{% static 'app/images/arrow-down.png' %}">
+					</div>
+				</div>
+				<div style="flex:1"><p>{{ item.total_price | format_currency }}</p></div>
+			</div>
+			{% endfor %}
+		</div>
+
+		<!-- CSS cho hình ảnh sản phẩm trong giỏ hàng -->
+		<style>
+			.product-image {
+				width: 80px;  /* Đặt chiều rộng cố định cho hình ảnh */
+				height: 80px; /* Đặt chiều cao cố định cho hình ảnh */
+				overflow: hidden; /* Đảm bảo nội dung bị cắt nếu vượt ra ngoài */
+				display: inline-block;
+			}
+		
+			.product-image img {
+				width: 100%; /* Làm cho hình ảnh phủ đầy phần chứa */
+				height: 100%; /* Làm cho hình ảnh phủ đầy phần chứa */
+				object-fit: cover; /* Giữ tỷ lệ khung hình trong khi hình ảnh phủ đầy phần chứa */
+			}
+		</style>
+		
+	</div>
+</div>
+
+<!-- Kết thúc phần giỏ hàng -->
+<br><br><br><br><br><br>
+{% endblock cart_content %}
