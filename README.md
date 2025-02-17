@@ -40,9 +40,9 @@ Dashboard
 ### **Trang Khách Hàng**
 
 - **Quản lý danh mục sản phẩm**: Hiển thị danh mục với bộ lọc tìm kiếm nâng cao, giúp khách hàng dễ dàng lựa chọn sản phẩm phù hợp.
-- **Xử lý đơn hàng**: Khách hàng có thể đặt hàng và theo dõi trạng thái đơn hàng theo thời gian thực.
+- **Tìm kiếm và lọc sản phẩm**: Khách hàng có thể tìm kiếm và lọc sản phẩm theo tên
 - **Giỏ hàng và thanh toán**: Hệ thống hỗ trợ các cổng thanh toán, đảm bảo giao dịch an toàn và bảo mật.
-- **Quản lý khuyến mãi**: Áp dụng mã giảm giá và các chương trình ưu đãi để tiết kiệm chi phí cho khách hàng.
+- **Xem chương trình khuyến mãi**: Áp dụng mã giảm giá và các chương trình ưu đãi để tiết kiệm chi phí cho khách hàng.
 
 ### **Trang Quản Lý**
 
