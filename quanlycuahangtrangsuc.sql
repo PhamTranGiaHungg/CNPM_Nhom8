@@ -1,119 +1,95 @@
 CREATE SCHEMA `quanlycuahangtrangsuc` ;
 
--- Bảng SanPham: Lưu thông tin sản phẩm
-CREATE TABLE SanPham (
-    MaSanPham INT AUTO_INCREMENT PRIMARY KEY,
-    TenSanPham VARCHAR(255) NOT NULL,
-    MaVach VARCHAR(50) UNIQUE, -- Mã vạch
-    GiaVang DECIMAL(10, 2), -- Giá vàng
-    TienCong DECIMAL(10, 2), -- Tiền công
-    TienGiaCong DECIMAL(10, 2), -- Tiền gia công
-    TonKho INT NOT NULL, -- Số lượng tồn kho
-    NgayTao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- Bảng sản phẩm (products)
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY, -- Khóa chính, tự động tăng
+    name VARCHAR(255) NOT NULL, -- Tên sản phẩm
+    barcode VARCHAR(50) UNIQUE NOT NULL, -- Mã vạch
+    category VARCHAR(100) NOT NULL, -- Loại sản phẩm
+    gold_price DECIMAL(10, 2) NOT NULL, -- Giá vàng
+    labor_cost DECIMAL(10, 2) NOT NULL, -- Công gia công
+    crafting_cost DECIMAL(10, 2) NOT NULL, -- Chi phí gia công
+    stock INT NOT NULL, -- Số lượng tồn kho
+    description TEXT, -- Mô tả sản phẩm
+    supplier_id INT -- Khóa ngoại liên kết với bảng nhà cung cấp (nếu có)
 );
 
--- Bảng HoaDon: Lưu thông tin hóa đơn
-CREATE TABLE HoaDon (
-    MaHoaDon INT AUTO_INCREMENT PRIMARY KEY,
-    MaKhachHang INT,
-    NgayHoaDon DATETIME DEFAULT CURRENT_TIMESTAMP,
-    TongTien DECIMAL(10, 2), -- Tổng tiền hóa đơn
-    FOREIGN KEY (MaKhachHang) REFERENCES KhachHang(MaKhachHang)
+-- Bảng khách hàng (customers)
+CREATE TABLE customers (
+    id SERIAL PRIMARY KEY, -- Khóa chính, tự động tăng
+    name VARCHAR(255) NOT NULL, -- Tên khách hàng
+    phone VARCHAR(15) UNIQUE NOT NULL, -- Số điện thoại
+    email VARCHAR(255), -- Email khách hàng
+    address TEXT, -- Địa chỉ khách hàng
+    loyalty_points INT DEFAULT 0, -- Điểm tích lũy
+    transaction_history JSON -- Lịch sử giao dịch (dạng JSON lưu hóa đơn và thông tin liên quan)
 );
 
--- Bảng ChiTietHoaDon: Chi tiết hóa đơn
-CREATE TABLE ChiTietHoaDon (
-    MaChiTiet INT AUTO_INCREMENT PRIMARY KEY,
-    MaHoaDon INT,
-    MaSanPham INT,
-    SoLuong INT NOT NULL,
-    Gia DECIMAL(10, 2), -- Giá bán
-    FOREIGN KEY (MaHoaDon) REFERENCES HoaDon(MaHoaDon),
-    FOREIGN KEY (MaSanPham) REFERENCES SanPham(MaSanPham)
+-- Bảng hóa đơn (invoices)
+CREATE TABLE invoices (
+    id SERIAL PRIMARY KEY, -- Khóa chính, tự động tăng
+    customer_id INT, -- Khóa ngoại liên kết với bảng customers
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Ngày giao dịch
+    total_amount DECIMAL(10, 2) NOT NULL, -- Tổng tiền hóa đơn
+    discount DECIMAL(5, 2) DEFAULT 0, -- Chiết khấu (nếu có)
+    FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE SET NULL
 );
 
--- Bảng KhachHang: Lưu trữ thông tin khách hàng
-CREATE TABLE KhachHang (
-    MaKhachHang INT AUTO_INCREMENT PRIMARY KEY,
-    HoTen VARCHAR(255),
-    SoDienThoai VARCHAR(15),
-    Email VARCHAR(255),
-    DiemTichLuy INT DEFAULT 0 -- Điểm tích lũy
+-- Bảng phụ: Chi tiết sản phẩm trong hóa đơn (invoice_products)
+-- Để dễ dàng truy vấn các sản phẩm thuộc hóa đơn
+CREATE TABLE invoice_products (
+    invoice_id INT, -- Khóa ngoại liên kết với bảng invoices
+    product_id INT, -- Khóa ngoại liên kết với bảng products
+    quantity INT NOT NULL, -- Số lượng sản phẩm
+    price DECIMAL(10, 2) NOT NULL, -- Giá bán
+    FOREIGN KEY (invoice_id) REFERENCES invoices(id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
 
--- Bảng KhuyenMai: Chương trình khuyến mãi
-CREATE TABLE KhuyenMai (
-    MaKhuyenMai INT AUTO_INCREMENT PRIMARY KEY,
-    TenKhuyenMai VARCHAR(255),
-    MucGiam DECIMAL(5, 2), -- Mức giảm giá (%)
-    NgayBatDau DATE,
-    NgayKetThuc DATE
+-- Bảng khuyến mãi (promotions)
+CREATE TABLE promotions (
+    id SERIAL PRIMARY KEY, -- Khóa chính, tự động tăng
+    name VARCHAR(255) NOT NULL, -- Tên chương trình khuyến mãi
+    description TEXT, -- Mô tả khuyến mãi
+    discount_rate DECIMAL(5, 2) NOT NULL, -- Mức chiết khấu (phần trăm)
+    start_date TIMESTAMP NOT NULL, -- Ngày bắt đầu
+    end_date TIMESTAMP NOT NULL -- Ngày kết thúc
 );
 
--- Bảng MuaLaiHang: Chính sách mua lại
-CREATE TABLE MuaLaiHang (
-    MaMuaLai INT AUTO_INCREMENT PRIMARY KEY,
-    MaSanPham INT,
-    TiLeMuaLai DECIMAL(5, 2), -- Tỷ lệ mua lại (%)
-    GiaCoDinh DECIMAL(10, 2), -- Giá cố định (cho đá quý)
-    FOREIGN KEY (MaSanPham) REFERENCES SanPham(MaSanPham)
+-- Bảng chi tiết khuyến mãi theo sản phẩm (promotion_products)
+CREATE TABLE promotion_products (
+    promotion_id INT, -- Khóa ngoại liên kết với bảng promotions
+    product_id INT, -- Khóa ngoại liên kết với bảng products
+    FOREIGN KEY (promotion_id) REFERENCES promotions(id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
 
--- Bảng ThongKe: Báo cáo thống kê
-CREATE TABLE ThongKe (
-    MaBaoCao INT AUTO_INCREMENT PRIMARY KEY,
-    NgayBaoCao DATE,
-    DoanhThuTong DECIMAL(10, 2), -- Tổng doanh thu
-    SanPhamBanChay VARCHAR(255), -- Sản phẩm bán chạy nhất
-    BaoCaoTonKho TEXT -- Báo cáo tồn kho
+-- Bảng mua lại hàng (buybacks)
+CREATE TABLE buybacks (
+    id SERIAL PRIMARY KEY, -- Khóa chính, tự động tăng
+    product_id INT, -- Khóa ngoại liên kết với bảng products
+    buyback_rate DECIMAL(5, 2) NOT NULL, -- Tỷ lệ mua lại (% giá bán)
+    fixed_rate DECIMAL(10, 2), -- Giá cố định (nếu có)
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
 
--- Tạo hóa đơn
-INSERT INTO HoaDon (MaKhachHang, TongTien)
-VALUES (1, 0); -- Tạo hóa đơn cho khách hàng có mã 1
+-- Bảng lịch sử mua lại (buyback_history)
+CREATE TABLE buyback_history (
+    id SERIAL PRIMARY KEY, -- Khóa chính, tự động tăng
+    customer_id INT, -- Khóa ngoại liên kết với bảng customers
+    product_id INT, -- Khóa ngoại liên kết với bảng products
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Ngày giao dịch mua lại
+    amount DECIMAL(10, 2) NOT NULL, -- Số tiền đã mua lại
+    FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE SET NULL,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE SET NULL
+);
 
--- Thêm sản phẩm vào hóa đơn
-INSERT INTO ChiTietHoaDon (MaHoaDon, MaSanPham, SoLuong, Gia)
-VALUES (1, 101, 2, (SELECT GiaVang + TienCong + TienGiaCong FROM SanPham WHERE MaSanPham = 101));
+-- Bảng nhà cung cấp (suppliers)
+CREATE TABLE suppliers (
+    id SERIAL PRIMARY KEY, -- Khóa chính, tự động tăng
+    name VARCHAR(255) NOT NULL, -- Tên nhà cung cấp
+    phone VARCHAR(15) NOT NULL, -- Số điện thoại
+    email VARCHAR(255), -- Email liên hệ
+    address TEXT -- Địa chỉ nhà cung cấp
+);
 
--- Cập nhật tổng tiền hóa đơn
-UPDATE HoaDon
-SET TongTien = (SELECT SUM(SoLuong * Gia) FROM ChiTietHoaDon WHERE MaHoaDon = 1)
-WHERE MaHoaDon = 1;
-
--- Thêm khách hàng mới
-INSERT INTO KhachHang (HoTen, SoDienThoai, Email)
-VALUES ('Nguyen Van A', '0123456789', 'example@gmail.com');
-
--- Cập nhật điểm tích lũy cho khách hàng
-UPDATE KhachHang
-SET DiemTichLuy = DiemTichLuy + 100 -- Thêm 100 điểm tích lũy
-WHERE MaKhachHang = 1;
-
--- Tính giá mua lại trang sức
-SELECT MaSanPham, (GiaVang * 0.7) AS GiaMuaLai -- Tỷ lệ mua lại 70%
-FROM SanPham
-WHERE MaSanPham = 101;
-
--- Cập nhật giá mua lại cố định cho đá quý
-UPDATE MuaLaiHang
-SET GiaCoDinh = (SELECT GiaVang * 0.7 FROM SanPham WHERE MaSanPham = 201)
-WHERE MaSanPham = 201;
-
--- Doanh thu theo ngày
-SELECT DATE(NgayHoaDon) AS NgayBaoCao, SUM(TongTien) AS DoanhThuTong
-FROM HoaDon
-GROUP BY DATE(NgayHoaDon);
-
--- Sản phẩm bán chạy nhất
-SELECT MaSanPham, TenSanPham, SUM(SoLuong) AS TongSoLuong
-FROM ChiTietHoaDon
-JOIN SanPham ON ChiTietHoaDon.MaSanPham = SanPham.MaSanPham
-GROUP BY MaSanPham
-ORDER BY TongSoLuong DESC
-LIMIT 1;
-
--- Báo cáo tồn kho
-SELECT MaSanPham, TenSanPham, TonKho
-FROM SanPham
-WHERE TonKho < 10; -- Cảnh báo nếu tồn kho dưới 10
