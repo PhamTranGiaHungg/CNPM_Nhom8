@@ -5,13 +5,21 @@
 ## **Giới Thiệu**
 
 Hệ thống quản lý cửa hàng trang sức là một nền tảng thương mại điện tử tiên tiến, được thiết kế để phục vụ cho ngành kinh doanh trang sức cao cấp. Hệ thống bao gồm hai thành phần chính:
-
 ### **1. Trang Khách Hàng**
 Trang dành cho khách hàng, nơi họ có thể duyệt sản phẩm, đặt hàng và thanh toán trực tuyến.
 
 ### **2. Trang Quản Lý**
 Dành cho nhân viên và quản trị viên
 
+Quản lý quầy
+Sản phẩm
+Khuyến mãi
+Mua lại
+Nhân viên
+Doanh thu
+Khai báo
+Tích điểm
+Dashboard
 ---
 
 ## **Đặc Điểm Nổi Bật**
