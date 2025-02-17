@@ -92,7 +92,7 @@ python manage.py runserver
 
 ## **Hướng Dẫn Sử Dụng**
 
-- **Trang khách hàng**: Truy cập vào [http://127.0.0.1:8000/](http://127.0.0.1:8000/) để duyệt sản phẩm và thực hiện thanh toán.
+- **Trang khách hàng**: Truy cập vào [http://127.0.0.1:8000/](http://127.0.0.1:8000/) để mua sản phẩm và thực hiện thanh toán.
 - **Trang quản lý**: Truy cập vào [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) để quản lý đơn hàng, sản phẩm và chương trình khuyến mãi.
 - **Khách hàng**: Có thể đăng ký tài khoản, đăng nhập và thực hiện các giao dịch mua sắm.
 - **Nhân viên**: Có thể quản lý thông tin sản phẩm, đơn hàng, khách hàng và xử lý khiếu nại.
