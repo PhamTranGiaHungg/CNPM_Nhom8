@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Hệ Thống Quản Lý Cửa Hàng Trang Sức
 
 ## Giới Thiệu
@@ -101,5 +100,3 @@ Hệ thống này là một nền tảng thương mại điện tử tiên tiế
 
 =======
 # CNPM_Nhom8
-Test
->>>>>>> 80bc2cfed184e73e8eba04289a65de61bbe8dd9b
