@@ -28,7 +28,7 @@ Hệ thống này là một nền tảng thương mại điện tử tiên tiế
 
 ### Xử lý đơn hàng: Đặt hàng, theo dõi trạng thái đơn hàng theo thời gian thực.
 
-### Giỏ hàng và thanh toán: Hỗ trợ cổng thanh toán BIDV, đảm bảo giao dịch an toàn.
+### Giỏ hàng và thanh toán: Hỗ trợ cổng thanh toán , đảm bảo giao dịch an toàn.
 
 ### Quản lý khuyến mãi: Áp dụng mã giảm giá, chương trình ưu đãi.
 
