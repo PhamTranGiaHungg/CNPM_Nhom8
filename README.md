@@ -11,8 +11,8 @@ Hệ thống quản lý cửa hàng trang sức là một nền tảng thương 
 Trang dành cho khách hàng, nơi họ có thể duyệt sản phẩm, đặt hàng và thanh toán trực tuyến.
 
 ### **2. Trang Quản Lý**
-Dành cho nhân viên và quản trị viên
 
+Dành cho nhân viên và quản trị viên:
 Quản lý quầy
 Sản phẩm
 Khuyến mãi
@@ -22,6 +22,7 @@ Doanh thu
 Khai báo
 Tích điểm
 Dashboard
+
 ---
 
 ## **Đặc Điểm Nổi Bật**
