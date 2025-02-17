@@ -1,4 +1,3 @@
-
 ---
 
 # **Hệ Thống Quản Lý Cửa Hàng Trang Sức**
@@ -112,6 +111,10 @@ Chúng tôi khuyến khích cộng đồng tham gia vào việc cải tiến h�
 - **Hotline**: 0123-456-789
 
 ---
+# Preview
+![image](https://github.com/user-attachments/assets/8b91515d-4c47-4268-b485-3b24923f04c3)
+![image](https://github.com/user-attachments/assets/ae41df6e-8562-484e-a53b-af89dd27c227)
+
 
 Chúng tôi mong muốn mang đến trải nghiệm mua sắm trang sức trực tuyến tuyệt vời nhất cho khách hàng!
 
