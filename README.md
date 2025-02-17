@@ -1,4 +1,3 @@
----
 # GỬI LỜI TRÂN TRỌNG TỚI GIẢNG VIÊN NGUYỄN VĂN CHIẾN ĐÃ HỖ TRỢ CHÚNG EM TRONG SUỐT THỜI GIAN VỪA QUA
 
 # **Hệ Thống Quản Lý Cửa Hàng Trang Sức**
@@ -114,8 +113,22 @@ Chúng tôi khuyến khích cộng đồng tham gia vào việc cải tiến h�
 
 ---
 # Preview
-![image](https://github.com/user-attachments/assets/8b91515d-4c47-4268-b485-3b24923f04c3)
-![image](https://github.com/user-attachments/assets/ae41df6e-8562-484e-a53b-af89dd27c227)
+## Trang 1
+![image](https://github.com/user-attachments/assets/a3929e62-a23f-4b74-b93b-9a9318e0481b)
+![image](https://github.com/user-attachments/assets/7d265c69-4f56-4a66-919b-0e94fbca1a9e)
+![image](https://github.com/user-attachments/assets/dbcf500e-efb1-4089-a16a-3a2a61e0c473)
+![image](https://github.com/user-attachments/assets/cd5b4303-f1c2-4174-b89c-cd736e0394ba)
+![image](https://github.com/user-attachments/assets/4757d6dd-709b-46a4-8087-8e6b2bca6787)
+![image](https://github.com/user-attachments/assets/fa52bfdf-e37f-4727-b707-349e8dd6f2ae)
+![image](https://github.com/user-attachments/assets/a290e48c-e09b-467e-8284-26cdf3e6d143)
+## Trang 2
+![image](https://github.com/user-attachments/assets/ae943aeb-3d6d-4aa7-a8e9-a79e09e51ebb)
+![image](https://github.com/user-attachments/assets/5eacade7-68f3-4cf1-a7d8-8921295e41ef)
+![image](https://github.com/user-attachments/assets/fc9e4552-bf51-45ff-90a6-bcd46b203ec4)
+![image](https://github.com/user-attachments/assets/f4a7709f-cc53-43f4-9c88-b173bbc6ef78)
+![image](https://github.com/user-attachments/assets/31bcef77-7d8b-4f20-98d7-a85eacb6bc9e)
+![image](https://github.com/user-attachments/assets/3e28899c-75c4-46a1-8a3b-6ffbac2f1f1b)
+
 
 
 Chúng tôi mong muốn mang đến trải nghiệm mua sắm trang sức trực tuyến tuyệt vời nhất cho khách hàng!
