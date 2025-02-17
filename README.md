@@ -106,7 +106,7 @@ Chúng tôi khuyến khích cộng đồng tham gia vào việc cải tiến h�
 
 ---
 
-## **Liên Hệ & Hỗ Trợ**
+## **Liên Hệ & Hỗ Trợ (DEMO)**
 
 - **Email**: info@jewelrystore.com
 - **Website**: [https://jewelrystore.com](https://jewelrystore.com)
