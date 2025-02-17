@@ -11,15 +11,7 @@ Trang dành cho khách hàng, nơi họ có thể duyệt sản phẩm, đặt h
 
 ### **2. Trang Quản Lý**
 Dành cho nhân viên và quản trị viên: 
-Quản lý quầy,
-sản phẩm,
-khuyến mãi,
-mua lại,
-nhân viên,
-doanh thu,
-khai báo,
-tích điểm,
-dashboard,
+Quản lý quầy, sản phẩm, khuyến mãi, mua lại, nhân viên, doanh thu, khai báo, tích điểm, dashboard,
 
 ---
 
