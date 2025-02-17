@@ -56,33 +56,33 @@ Hệ thống này là một nền tảng thương mại điện tử tiên tiế
 
 ### Bước 1: Sao Chép Mã Nguồn
 
-### git clone https://github.com/your-repo/jewelry-store.git
-### cd jewelry-store
+#### git clone https://github.com/your-repo/jewelry-store.git
+#### cd jewelry-store
 
 ### Bước 2: Cấu Hình Môi Trường
 
-### python -m venv django_venv
-### source django_venv/bin/activate  # macOS/Linux
-### django_venv\Scripts\activate  # Windows
+#### python -m venv django_venv
+#### source django_venv/bin/activate  # macOS/Linux
+#### django_venv\Scripts\activate  # Windows
 
 ### Bước 3: Cài Đặt Thư Viện Phụ Thuộc
 
-### pip install -r requirements.txt
+#### pip install -r requirements.txt
 
 ### Bước 4: Khởi Chạy Hệ Thống
 
-### python manage.py migrate
-### python manage.py runserver
+#### python manage.py migrate
+#### python manage.py runserver
 
 ## Hướng Dẫn Sử Dụng
 
-### Truy cập trang khách hàng: http://127.0.0.1:8000/
+#### Truy cập trang khách hàng: http://127.0.0.1:8000/
 
-### Truy cập trang quản lý: http://127.0.0.1:8000/admin/
+#### Truy cập trang quản lý: http://127.0.0.1:8000/admin/
 
-### Khách hàng có thể đăng ký, đăng nhập, mua sắm và thanh toán.
+#### Khách hàng có thể đăng ký, đăng nhập, mua sắm và thanh toán.
 
-### Nhân viên có thể quản lý đơn hàng, sản phẩm, khách hàng và chương trình khuyến mãi.
+#### Nhân viên có thể quản lý đơn hàng, sản phẩm, khách hàng và chương trình khuyến mãi.
 
 ## Đóng Góp & Phát Triển
 
