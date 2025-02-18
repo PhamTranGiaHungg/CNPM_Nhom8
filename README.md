@@ -20,6 +20,7 @@ Nhân viên
 Doanh thu
 Khai báo
 Tích điểm
+Lịch sử mua hàng
 Dashboard
 
 ---
@@ -54,6 +55,7 @@ Dashboard
 - **Quản lý doanh thu**: Tổng hợp các quá trình theo dõi, phân tích và tối ưu hóa nguồn thu từ hoạt động bán hàng, nhằm đảm bảo lợi nhuận và sự phát triển bền vững.
 - **Khai báo**: Ghi nhận, báo cáo các thông tin quan trọng liên quan đến hoạt động kinh doanh.
 - **Quản lý tích điểm**: Theo dõi chương trình tích điểm, cập nhật lịch sử giao dịch và các ưu đãi cho khách hàng.
+- **Lịch sử mua hàng**: Phần dữ liệu ghi nhận tất cả các giao dịch mua sắm mà khách hàng đã thực hiện trên hệ thống.
 - **Dashboard**: Cung cấp cái nhìn tổng quan về hoạt động kinh doanh thông qua dữ liệu trực quan và biểu đồ phân tích.
 
 ---
