@@ -46,14 +46,14 @@ Dashboard
 
 ### **Trang Quản Lý**
 
-- **Quản lý quầy**: Theo dõi, cập nhật thông tin quầy bán hàng, nhân viên phụ trách và tình trạng hoạt động.
+ -**Quản lý quầy**: Theo dõi, cập nhật thông tin quầy bán hàng, nhân viên phụ trách và tình trạng hoạt động.
 - **Quản lý sản phẩm**: Cập nhật thông tin, giá cả, hình ảnh sản phẩm và kiểm soát kho hàng.
 - **Quản lý khuyến mãi**: Phê duyệt, từ chối hoặc điều chỉnh chương trình khuyến mãi để tối ưu doanh số.
 - **Quản lý mua lại**: Xử lý giao dịch mua lại trang sức từ khách hàng, kiểm tra chất lượng và định giá sản phẩm.
 - **Quản lý nhân viên**: Quản lý hồ sơ nhân sự, phân quyền và theo dõi hiệu suất làm việc.
-- **Quản lý doanh thu**: Tổng hợp, phân tích doanh thu và đưa ra báo cáo tài chính chi tiết.
+- **Quản lý doanh thu**: Tổng hợp các quá trình theo dõi, phân tích và tối ưu hóa nguồn thu từ hoạt động bán hàng, nhằm đảm bảo lợi nhuận và sự phát triển bền vững.
 - **Khai báo**: Ghi nhận, báo cáo các thông tin quan trọng liên quan đến hoạt động kinh doanh.
-- **Quản lý tích điểm**: Theo dõi chương trình tích điểm, cập nhật lịch sử giao dịch và ưu đãi cho khách hàng.
+- **Quản lý tích điểm**: Theo dõi chương trình tích điểm, cập nhật lịch sử giao dịch và các ưu đãi cho khách hàng.
 - **Dashboard**: Cung cấp cái nhìn tổng quan về hoạt động kinh doanh thông qua dữ liệu trực quan và biểu đồ phân tích.
 
 ---
