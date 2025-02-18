@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hệ Thống Quản Lý Cửa Hàng Trang Sức
 
 ## Giới Thiệu
@@ -98,3 +99,7 @@ Hệ thống này là một nền tảng thương mại điện tử tiên tiế
 
 ## Chúng tôi mong muốn mang đến trải nghiệm mua sắm trang sức trực tuyến tốt nhất!
 
+=======
+# CNPM_Nhom8
+Test
+>>>>>>> 80bc2cfed184e73e8eba04289a65de61bbe8dd9b
