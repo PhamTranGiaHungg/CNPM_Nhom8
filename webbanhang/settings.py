@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'webbanhang.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'quanlycuahangtrangsuc',
+        'NAME': 'sitesalejewlry',
         'USER': 'root',
         'PASSWORD': 'your_password',  # Thay đổi mật khẩu của bạn
         'HOST': 'localhost',
