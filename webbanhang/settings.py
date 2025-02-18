@@ -80,13 +80,13 @@ WSGI_APPLICATION = 'webbanhang.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sitesalejewelry',
-        'USER':'root',
-        'PASSWORD':'root',
-        'HOST':'localhost'
+        'NAME': 'quanlycuahangtrangsuc',
+        'USER': 'root',
+        'PASSWORD': 'your_password',  # Thay đổi mật khẩu của bạn
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
